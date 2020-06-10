@@ -15,7 +15,11 @@ namespace CamDemo.model
 
         public VideoReader()
         {
-            videoCapture = new VideoCapture(0);
+            videoCapture = new VideoCapture(1);
+            videoCapture.Set(VideoCaptureProperties.FrameWidth, 1920);
+            videoCapture.Set(VideoCaptureProperties.FrameHeight, 1080);
+            videoCapture.Set(VideoCaptureProperties.Fps, 60);
+
         }
 
         public async Task ReadFrame(IProgress<ProcessedFrame> progress, CancellationToken token)

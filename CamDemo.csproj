@@ -1,17 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
-  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.3.0.0\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.3.0.0\build\Microsoft.NetFramework.Analyzers.props')" />
-  <Import Project="..\packages\Microsoft.NetCore.Analyzers.3.0.0\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.3.0.0\build\Microsoft.NetCore.Analyzers.props')" />
-  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.3.0.0\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.3.0.0\build\Microsoft.CodeQuality.Analyzers.props')" />
-  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.0.0\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.0.0\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
-  <Import Project="..\packages\PropertyChanged.Fody.3.2.8\build\PropertyChanged.Fody.props" Condition="Exists('..\packages\PropertyChanged.Fody.3.2.8\build\PropertyChanged.Fody.props')" />
-  <Import Project="..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.props')" />
-  <Import Project="..\packages\OpenCvSharp4.runtime.win.4.3.0.20200524\build\net\OpenCvSharp4.runtime.win.props" Condition="Exists('..\packages\OpenCvSharp4.runtime.win.4.3.0.20200524\build\net\OpenCvSharp4.runtime.win.props')" />
-  <Import Project="..\packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.props" Condition="Exists('..\packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.props')" />
-  <Import Project="..\packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.props" Condition="Exists('..\packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.props')" />
-  <Import Project="..\packages\Neutronium.JavascriptFramework.Vue.1.6.0\build\Neutronium.JavascriptFramework.Vue.props" Condition="Exists('..\packages\Neutronium.JavascriptFramework.Vue.1.6.0\build\Neutronium.JavascriptFramework.Vue.props')" />
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="packages\OpenCvSharp4.runtime.win.4.3.0.20200524\build\net\OpenCvSharp4.runtime.win.props" Condition="Exists('packages\OpenCvSharp4.runtime.win.4.3.0.20200524\build\net\OpenCvSharp4.runtime.win.props')" />
+  <Import Project="packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.props" Condition="Exists('packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.props')" />
+  <Import Project="packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.props" Condition="Exists('packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.props')" />
+  <Import Project="packages\PropertyChanged.Fody.3.2.8\build\PropertyChanged.Fody.props" Condition="Exists('packages\PropertyChanged.Fody.3.2.8\build\PropertyChanged.Fody.props')" />
+  <Import Project="packages\Neutronium.JavascriptFramework.Vue.1.6.0\build\Neutronium.JavascriptFramework.Vue.props" Condition="Exists('packages\Neutronium.JavascriptFramework.Vue.1.6.0\build\Neutronium.JavascriptFramework.Vue.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -98,6 +91,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <PlatformTarget>x64</PlatformTarget>
     <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -107,52 +101,73 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CommonServiceLocator, Version=2.0.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\CommonServiceLocator.2.0.5\lib\net47\CommonServiceLocator.dll</HintPath>
+      <HintPath>packages\CommonServiceLocator.2.0.5\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="MoreCollection, Version=2.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MoreCollection.2.0.1\lib\net45\MoreCollection.dll</HintPath>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MoreCollection, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MoreCollection.2.0.0\lib\net45\MoreCollection.dll</HintPath>
     </Reference>
     <Reference Include="Neutronium.BuildingBlocks.SetUp, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Neutronium.BuildingBlocks.SetUp.1.2.1\lib\net472\Neutronium.BuildingBlocks.SetUp.dll</HintPath>
+      <HintPath>packages\Neutronium.BuildingBlocks.SetUp.1.2.1\lib\net472\Neutronium.BuildingBlocks.SetUp.dll</HintPath>
     </Reference>
     <Reference Include="Neutronium.Core, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Neutronium.Core.1.5.2\lib\net472\Neutronium.Core.dll</HintPath>
+      <HintPath>packages\Neutronium.Core.1.5.2\lib\net472\Neutronium.Core.dll</HintPath>
     </Reference>
     <Reference Include="Neutronium.JavascriptFramework.Vue, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Neutronium.JavascriptFramework.Vue.1.6.0\lib\net472\Neutronium.JavascriptFramework.Vue.dll</HintPath>
+      <HintPath>packages\Neutronium.JavascriptFramework.Vue.1.6.0\lib\net472\Neutronium.JavascriptFramework.Vue.dll</HintPath>
     </Reference>
     <Reference Include="Neutronium.MVVMComponents, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Neutronium.MVVMComponents.1.5.0\lib\net472\Neutronium.MVVMComponents.dll</HintPath>
+      <HintPath>packages\Neutronium.MVVMComponents.1.5.0\lib\net472\Neutronium.MVVMComponents.dll</HintPath>
     </Reference>
     <Reference Include="Neutronium.WPF, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Neutronium.WPF.1.5.2\lib\net472\Neutronium.WPF.dll</HintPath>
+      <HintPath>packages\Neutronium.WPF.1.5.2\lib\net472\Neutronium.WPF.dll</HintPath>
     </Reference>
     <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
-      <HintPath>..\packages\OpenCvSharp4.4.3.0.20200524\lib\net461\OpenCvSharp.dll</HintPath>
+      <HintPath>packages\OpenCvSharp4.4.3.0.20200524\lib\net461\OpenCvSharp.dll</HintPath>
     </Reference>
     <Reference Include="OpenCvSharp.Blob, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
-      <HintPath>..\packages\OpenCvSharp4.4.3.0.20200524\lib\net461\OpenCvSharp.Blob.dll</HintPath>
+      <HintPath>packages\OpenCvSharp4.4.3.0.20200524\lib\net461\OpenCvSharp.Blob.dll</HintPath>
     </Reference>
     <Reference Include="OpenCvSharp.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
-      <HintPath>..\packages\OpenCvSharp4.4.3.0.20200524\lib\net461\OpenCvSharp.Extensions.dll</HintPath>
+      <HintPath>packages\OpenCvSharp4.4.3.0.20200524\lib\net461\OpenCvSharp.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="PropertyChanged, Version=3.2.8.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
-      <HintPath>..\packages\PropertyChanged.Fody.3.2.8\lib\net40\PropertyChanged.dll</HintPath>
+
+      <PrivateAssets>all</PrivateAssets>
+      <HintPath>packages\PropertyChanged.Fody.3.2.8\lib\net40\PropertyChanged.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="PresentationCore">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationCore.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Reactive, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>packages\System.Reactive.4.1.2\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
@@ -246,39 +261,19 @@
     <Content Include="View\src\install.js" />
     <Content Include="View\src\main.js" />
   </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
-    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
-    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.VersionCheckAnalyzer.resources.dll" />
-    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.0.0\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
-    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.3.0.0\analyzers\dotnet\cs\Humanizer.dll" />
-    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
-    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
-    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
-    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
-    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
-    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.3.0.0\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Neutronium.JavascriptFramework.Vue.1.6.0\build\Neutronium.JavascriptFramework.Vue.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Neutronium.JavascriptFramework.Vue.1.6.0\build\Neutronium.JavascriptFramework.Vue.props'))" />
-    <Error Condition="!Exists('..\packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.props'))" />
-    <Error Condition="!Exists('..\packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.targets'))" />
-    <Error Condition="!Exists('..\packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.props'))" />
-    <Error Condition="!Exists('..\packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.targets'))" />
-    <Error Condition="!Exists('..\packages\OpenCvSharp4.runtime.win.4.3.0.20200524\build\net\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp4.runtime.win.4.3.0.20200524\build\net\OpenCvSharp4.runtime.win.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.targets'))" />
-    <Error Condition="!Exists('..\packages\PropertyChanged.Fody.3.2.8\build\PropertyChanged.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PropertyChanged.Fody.3.2.8\build\PropertyChanged.Fody.props'))" />
-    <Error Condition="!Exists('..\packages\Fody.6.2.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.2.0\build\Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.0.0\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.3.0.0\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.3.0.0\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.3.0.0\build\Microsoft.CodeQuality.Analyzers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.3.0.0\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.3.0.0\build\Microsoft.NetCore.Analyzers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.3.0.0\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.3.0.0\build\Microsoft.NetFramework.Analyzers.props'))" />
-    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.3.0.0\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
+    <Error Condition="!Exists('packages\Neutronium.JavascriptFramework.Vue.1.6.0\build\Neutronium.JavascriptFramework.Vue.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Neutronium.JavascriptFramework.Vue.1.6.0\build\Neutronium.JavascriptFramework.Vue.props'))" />
+    <Error Condition="!Exists('packages\PropertyChanged.Fody.3.2.8\build\PropertyChanged.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\PropertyChanged.Fody.3.2.8\build\PropertyChanged.Fody.props'))" />
+    <Error Condition="!Exists('packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.props'))" />
+    <Error Condition="!Exists('packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.targets'))" />
+    <Error Condition="!Exists('packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.props'))" />
+    <Error Condition="!Exists('packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.targets'))" />
+    <Error Condition="!Exists('packages\OpenCvSharp4.runtime.win.4.3.0.20200524\build\net\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\OpenCvSharp4.runtime.win.4.3.0.20200524\build\net\OpenCvSharp4.runtime.win.props'))" />
+    <Error Condition="!Exists('packages\Fody.6.2.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.6.2.0\build\Fody.targets'))" />
   </Target>
   <Target Name="NpmBuild" DependsOnTargets="EnsureNode" BeforeTargets="BeforeBuild">
     <PropertyGroup>
@@ -290,10 +285,9 @@
     <Exec Command="$(RunNpmCmd1)" WorkingDirectory="$(NpmWorkingDirectory)" CustomErrorRegularExpression="(ERR!.*is not in the npm registry|Usage:)" />
     <Exec Command="$(RunNpmCmd2)" WorkingDirectory="$(NpmWorkingDirectory)" CustomErrorRegularExpression="(ERR!.*is not in the npm registry|Usage:)" />
   </Target>
-  <Import Project="..\packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.targets" Condition="Exists('..\packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.targets')" />
-  <Import Project="..\packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.targets" Condition="Exists('..\packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.targets')" />
-  <Import Project="..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.targets" Condition="Exists('..\packages\Microsoft.CodeAnalysis.Analyzers.3.0.0\build\Microsoft.CodeAnalysis.Analyzers.targets')" />
-  <Import Project="..\packages\Fody.6.2.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.2.0\build\Fody.targets')" />
+  <Import Project="packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.targets" Condition="Exists('packages\Unofficial.Chromiumfx.77.1.18.0\build\Unofficial.Chromiumfx.targets')" />
+  <Import Project="packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.targets" Condition="Exists('packages\Neutronium.WebBrowserEngine.ChromiumFx.1.6.0\build\Neutronium.WebBrowserEngine.ChromiumFx.targets')" />
+  <Import Project="packages\Fody.6.2.0\build\Fody.targets" Condition="Exists('packages\Fody.6.2.0\build\Fody.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

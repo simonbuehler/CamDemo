@@ -1,10 +1,10 @@
 ﻿using CamDemo.model;
-using GalaSoft.MvvmLight;
 using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using GalaSoft.MvvmLight;
 
 namespace CamDemo.ViewModel
 {
@@ -14,7 +14,7 @@ namespace CamDemo.ViewModel
         private CancellationTokenSource cts;
         private CancellationToken token;
 
-        public string imageBytes { get; set; }
+        public string imageBytes { get; private set; }
         public MainViewModel()
         {
             vr = new VideoReader();
@@ -35,10 +35,15 @@ namespace CamDemo.ViewModel
         {
             JpegBitmapEncoder encoder = new JpegBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create(writeableBitmap));
-            MemoryStream stream = new MemoryStream();
-            encoder.Save(stream);
-            Byte[] bytes = stream.ToArray();
-            return Convert.ToBase64String(bytes);
+            Byte[] bytes;
+            using (MemoryStream stream = new MemoryStream())
+            {
+                encoder.Save(stream);
+                bytes = stream.ToArray();
+                return Convert.ToBase64String(bytes);
+            }
+
+            
         }
 
         public override void Cleanup()

@@ -1,9 +1,6 @@
 <template>
     <div id="app">
-        <img class="logo" alt="Neutronium logo" src="./assets/logo.png">
-        <img v-bind:src="'data:image/jpeg;base64,'+imageBytes" />
-        <HelloWorld :msg="Message" />
-
+        <HelloWorld :ImageData="imageBytes" />
     </div>
 </template>
 

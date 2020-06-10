@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve ./src/main.js --open --port 9000",
-    "build:cached": "npm run check-hash || npm run build",
-    "build": "vue-cli-service build --entry ./src/entry.js --modern && npm run create-hash",
+    "build:cached": "npm run check-hash || npm run  build",
+    "build": "vue-cli-service build --entry ./src/entry.js --modern && npm run  create-hash",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "live": "vue-cli-service serve ./src/entry.js --port 8080 --mode integrated",
@@ -14,10 +14,14 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "mini-css-extract-plugin": "0.8.0",
     "neutronium-vue-command-mixin": "^1.4.1",
     "neutronium-vue-resultcommand-topromise": "^1.1.0",
     "neutronium-vue-simple-command-mixin": "^1.1.0",
     "vue": "^2.6.11"
+  },
+  "resolutions": {
+    "@vue/cli-service/mini-css-extract-plugin": "0.8.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.1",
