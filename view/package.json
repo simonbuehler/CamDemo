@@ -18,7 +18,7 @@
     "neutronium-vue-command-mixin": "^1.4.1",
     "neutronium-vue-resultcommand-topromise": "^1.1.0",
     "neutronium-vue-simple-command-mixin": "^1.1.0",
-    "vue": "^2.6.11"
+    "vue": "^3.0.0"
   },
   "resolutions": {
     "@vue/cli-service/mini-css-extract-plugin": "0.8.0"
